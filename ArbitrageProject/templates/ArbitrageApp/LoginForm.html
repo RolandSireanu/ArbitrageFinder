@@ -1,0 +1,38 @@
+{% extends "ArbitrageApp/baseLogin.html" %} 
+{% load static %} 
+{% block title %} 
+    Arbitrage finder 
+{% endblock %} 
+
+{% block head %}
+    <link href="{% static 'ArbitrageApp/css/loginForm.css' %}" rel="stylesheet">
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
+{% block content %} 
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+        <br>
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+        <div id="formFooter" class="flexFormFooter">
+            <div class="fp">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+            <div class="reg">
+            <a class="underlineHover" href="#">Register Account</a>
+            </div>
+        <div>
+    </div>
+</div>
+        
+{% endblock %}
