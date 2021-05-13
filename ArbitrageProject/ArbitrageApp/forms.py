@@ -19,6 +19,7 @@ class LoginForm(forms.Form):
         if "password" not in cleaned_data:
             self.fields["password"].widget.attrs["class"] += " form-control is-invalid";
         
+        
 
     def clean_username(self):
         usr = self.cleaned_data.get("username");
@@ -35,4 +36,5 @@ class LoginForm(forms.Form):
         if len(pswd) < 4:
             self.fields["password"].widget.attrs["class"] += " form-control is-invalid";
             raise forms.ValidationError("Password should be at least 4 characters long");
+        return pswd;
             
