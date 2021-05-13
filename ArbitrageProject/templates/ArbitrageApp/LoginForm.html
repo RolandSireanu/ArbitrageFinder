@@ -22,11 +22,23 @@
         <div class="flexInputs">
             {% for field in loginForm.visible_fields %}
                 {{ field }}
+                <!-- {% if field.errors %}
+                {{ field }}
+                {% else %}
+                    {{ field }}
+                {% endif %} -->
+                <!-- {% for err in field.errors %}
+                    <div class="invalid-feedback">
+                        {{ err }}
+                    </div>
+                {% endfor %}                 -->
+                <div class="invalid-feedback d-block">
+                    {% for err in field.errors %}
+                        {{ err }}
+                    {% endfor %}
+                </div>
+                
             {% endfor %}
-            
-            <!-- <input type="submit" class="fadeIn fourth" value="Log In"> -->
-            <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
             <input type="submit" class="fadeIn fourth" value="Log In">
         </div>
       </form>
