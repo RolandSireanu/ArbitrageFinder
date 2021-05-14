@@ -3,6 +3,6 @@ from django.urls import path
 from ArbitrageApp import views
 
 urlpatterns = [
-    path('Login', views.index, name="index"),
-    path("Hello", views.hello, name="hello")
+    path('login/', views.loginView, name="login"),
+    path("Hello", views.indexView, name="index")
 ];

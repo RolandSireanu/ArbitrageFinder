@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from . import forms
 # Create your views here.
 
-def index(req):
+def loginView(req):
 
     if req.method == "POST":
         loginForm = forms.LoginForm(req.POST);
@@ -16,7 +17,8 @@ def index(req):
             usrInDB = authenticate(username=usr, password=pswd)
             if usrInDB is not None :
                 print("User is authenticated !");
-                return redirect("/Hello");
+                login(req, usrInDB);
+                return redirect("index");
             else:
                 print("Wrong username or password ");
 
@@ -27,6 +29,6 @@ def index(req):
         loginForm = forms.LoginForm();
     return render(req, "ArbitrageApp/LoginForm.html", {"loginForm":loginForm});
 
-
-def hello(req):
+@login_required
+def indexView(req):
     return render(req, "ArbitrageApp/Hellopage.html");
