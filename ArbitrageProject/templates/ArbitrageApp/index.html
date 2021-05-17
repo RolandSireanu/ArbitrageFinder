@@ -1,4 +1,4 @@
-{% extends "ArbitrageApp/baseLogin.html" %}
+{% extends "ArbitrageApp/base.html" %}
 
 {% block title %} 
     Hello page 
@@ -6,4 +6,6 @@
 
 {% block content %}
     <h1><center>Hello world ! </center></h1>
+    <br>
+    <center><a href="{% url 'logout' %}">Logout</a></center>
 {% endblock %}
