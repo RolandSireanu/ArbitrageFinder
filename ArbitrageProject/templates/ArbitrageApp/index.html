@@ -1,11 +1,68 @@
 {% extends "ArbitrageApp/base.html" %}
-
+{% load static %}
 {% block title %} 
     Hello page 
 {% endblock %}
 
+{% block head %} 
+    <link href="{% static 'ArbitrageApp/css/index.css' %}" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %}
+
 {% block content %}
-    <h1><center>Hello world ! </center></h1>
+    <h1><center>Arbitrage finder! </center></h1>
     <br>
     <center><a href="{% url 'logout' %}">Logout</a></center>
+    <div class="mainTable">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="row">#</th>
+            <th scope="col">Event</th>
+            <th scope="col">Odds event 1</th>
+            <th scope="col">Bookmaker </th>
+            <th scope="col">Odds event 2</th>
+            <th scope="col">Bookmaker </th>
+            <th scope="col">Money on event 1</th>
+            <th scope="col">Money on event 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>U/O 2.5 goals</td>
+            <td>2.34</td>
+            <td><a href="https://www.winmasters.ro/ro/sportsbonus/">winmasters</a></td>
+            <td>2.11</td>
+            <td><a href="https://ro.betano.com/">Betano</a></td>
+            <td>24.43</td>
+            <td>62.19</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>U/O 2.5 goals</td>
+            <td>2.34</td>
+            <td><a href="https://www.winmasters.ro/ro/sportsbonus/">winmasters</a></td>
+            <td>2.11</td>
+            <td><a href="https://ro.betano.com/">Betano</a></td>
+            <td>24.43</td>
+            <td>62.19</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>U/O 2.5 goals</td>
+            <td>2.34</td>
+            <td><a href="https://www.winmasters.ro/ro/sportsbonus/">winmasters</a></td>
+            <td>2.11</td>
+            <td><a href="https://ro.betano.com/">Betano</a></td>
+            <td>24.43</td>
+            <td>62.19</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
 {% endblock %}
